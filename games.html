@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .game-title {
+            margin-bottom: 20px;
+        }
+        /* Custom styles for each game container */
+        #game-1, #game-2, #game-3 {
+          border:none;
+            color: gold;
+        }
+.containers{ border:none;}
+#g1,#g2,#g3,#qz{
+border-color:gold;
+border-radius:20px;
+border-style:solid;
+border-width:5px;
+background-color:#000080;
+color:gold;
+}
+#iii{color:#000080;}
+#qz{width:100%;height:auto;}
+  .card-body img {
+          margin-center:0px;             height: 350px;
+            width: 100%;
+        }
+         .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            z-index: 9999;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .loading-animation.finished {
+            opacity: 0;
+            pointer-events: none; /* Disable mouse events after animation */
+        }
+
+        .loading-animation img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: rotateBall 2s infinite linear;
+        }
+
+        @keyframes rotateBall {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #profile {
+            border-radius: 360px;
+            height: 10%;
+            width: 10%;
+        }
+
+         .navbar {
+            background-color: #000080;
+            text-align: left;
+position:auto;
+        }
+
+        .navbar .right-button {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: right;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-top: 5px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .nav-item .nav-link ,#navigationDropdown {
+            font-size: 1.2rem;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        @keyframes glow {
+            from {
+                color: yellow;
+            }
+            to {
+                color: gold;
+            }
+        }
+
+        .navbar-toggler {
+            border-color: gold;
+            background-color: gold;
+        }
+
+        .navbar-toggler-icon {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after,
+        .navbar-toggler-icon span {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black; /* Color of the lines */
+            left: 0;
+        }
+
+        .navbar-toggler-icon::before {
+            top: 0.3em;
+        }
+
+        .navbar-toggler-icon::after {
+            bottom: 0.3em;
+        }
+
+        .navbar-toggler-icon span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    .gg {
+    width: 100%;
+    background-color: #000080;
+    height: auto;
+}
+
+.chakra-footer {
+    background-color: #000080;
+    color: gold;
+    width: 100%;
+}
+
+
+        .footer-nav li {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .footer-nav li a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .footer-nav li a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .social-media li a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .social-media li a:hover {
+            color: #007bff;
+        }
+
+        .blockquote {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 0;
+        }
+
+        .blockquote p {
+            margin-bottom: 10px;
+        }
+
+        .blockquote footer {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        #profile_2 {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .g_li {
+            font-size: 20px;
+            color: gold;
+        }
+
+        #admin {
+            font-style: serif;
+            color: #000080; /* Change the color to your desired color */
+        }
+    </style>
+</head>
+<body>
+  <div class="loading-animation" id="loadingAnimation">
+        <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions"></br>
+    </div>
+<script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Set a timeout to hide the loading animation after 3 seconds
+        setTimeout(function() {
+            const loadingAnimation = document.getElementById('loadingAnimation');
+            if (loadingAnimation) {
+                loadingAnimation.style.display = 'none';
+            }
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+</script>
+
+    <!-- Content -->
+    <div id="content" style="display:auto;">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions" id="profile">
+                &nbsp;&nbsp;<a class="navbar-brand" href="#"><big><b align="center">C</b></big>hakra</a>
+                <div class="right-button">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+  <li class="nav-item">
+                            <a class="nav-link" href="./kids.html" target = "_blank">Kids</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="./games.html" target = "_blank">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./school.html" target = "_blank">School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./notifications.html" target = "_blank">Notifications</a>
+                        </li>
+   
+        <li class="nav-link"  align = "right">
+            <select id="navigationDropdown" style="background-color: #000080; color: gold; border: none;"  class="nav-item">
+       <a class="nav-link" href = "#">         <option value="./teachersguide.html"   class="nav-link">Teachers</option></a>
+                 <a class="nav-link" href = "#">   <option value="./calc.html"  class="nav-link">Calc</option></a>
+               <a class="nav-link" href = "#">     <option value="./gk.html"  class="nav-link">G.K</option></a>
+               </select>
+        </li>
+    
+ <script>
+  setTimeout(function() {
+            document.getElementById('loadingAnimation').classList.add('finished');
+            document.getElementById('content').style.display = 'block';
+        }, 2000);
+        
+        document.getElementById('navigationDropdown').addEventListener('change', function() {
+            var url = this.value;
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    </script>
+ <li class="nav-item">
+     <a class="nav-link" href = "./ethics.html"  target = "_blank" >Ethics</option></a>
+                            
+                        </li>
+ <li class="nav-item">
+                            <a class="nav-link" href="./contact.html" target = "_blank">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./aboutus.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</br></br>
+    <div class="containers" >
+        <div class="text-center game-title">
+            <h1><i class="fas fa-gamepad"></i> Chakra Games</h1>
+            <p>Developed by Phani Kumar Sharma</p>
+        </div>
+        
+        <div class="row" >
+            <div class="col-md-4" id="game-1">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body"  id = "g1">
+<img src="https://i.ibb.co/K5Gw4G7/Capture.png" alt="Quadrix_image" border="0">
+                    
+                        <h5 class="card-title">Quadrix</h5>
+                        <p class="card-text">A two player game.</p>
+                         <button class="btn btn-warning" onclick = "quadrix();"><i class="fas fa-play"  id = "iii"></i> Play</button>
+                       </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="game-2">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body"  id = "g2">
+<img src="https://i.ibb.co/pnBCxGZ/Capture2.png" alt="Capture2" border="0">
+                        <h5 class="card-title">Hand Cricket</h5>
+                        <p class="card-text">Play with a robot.</p>
+                        <button class="btn btn-warning" onclick = "hand_cricket();"><i class="fas fa-play"  id = "iii"></i> Play</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="game-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body"  id = "g3">
+<img src="https://i.ibb.co/DGmKfhk/suspence.jpg" alt="suspence" border="0">
+                        <h5 class="card-title">Suspence</h5>
+                        <p class="card-text">Will be released soon...</p>
+                        <button class="btn btn-warning" onclick = "suspence();"><i class="fas fa-play"  id = "iii"></i> Play</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class = "col -md-4"  id = "qz">
+<div class="card-body" >
+<img src="https://i.ibb.co/HXg8j54/quiz.jpg" alt="quiz" border="0" style = "height:450px;">
+                        <h1 class="card-title">Chakra special quiz</h1>
+                        <p class="card-text">General Knowledge</p></br>
+ <a href = "./gk.html">Prepare for quiz</a></br></br>
+                        <button class="btn btn-warning" onclick = "quiz();"><i class="fas fa-play"  id = "iii"></i> Play</button>
+                    </div></div>  
+
+<script>
+        function quadrix() {
+            alert("Let's go to a new innovatory virtual game Quadrix");
+            window.open("https://phanikumar-sharma.github.io/quadrix-github.io/", "_blank");
+        }
+function hand_cricket(){
+alert("Let's go to a new innovatory virtual game Hand_cricket");
+window.open("https://phanikumar-sharma.github.io/Hand-cricket/","_blank");
+}
+function suspence(){
+alert("This new innovatory game will be released soon.......");
+}
+function quiz(){
+alert("Let's play Chakra's speial quiz...");
+window.open("https://phanikumar-sharma.github.io/Quizgame_sharma/","_blank");
+}
+
+</script></br></br>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+ <div class="gg" style="width:100%; background-color:#000080;height:auto;">
+    <footer class="chakra-footer text-light" style="background-color:#000080; color:gold; width:100%;">
+        <h1 align="center">Chakra Educations</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-left">
+                    <ul class="list-unstyled footer-nav" type="disk">
+                        <li class="g_li"><a href="#">Home</a></li>
+                        <li class="g_li"><a href="./kids.html" target="_blank">Kids</a></li>
+                        <li class="g_li"><a href="./games.html" target="_blank">Games</a></li>
+                        <li class="g_li"><a href="./school.html" target="_blank">School</a></li>
+                        <li class="g_li"><a href="./notifications.html" target="_blank">Notifications</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                            <ul class="dropdown-menu">
+                                <li class="g_li"><a href="./ethics.html">Ethics</a></li>
+                                <li class="g_li"><a href="./gk.html">G.K.</a></li>
+                                <li class="g_li"><a href="./wa.html">What's App</a></li>
+                            </ul>
+                        </li>
+                        <li class="g_li"><a href="./calc.html" target="_blank">Calc</a></li>
+                        <li class="g_li"><a href="./contact.html" target="_blank">Contact</a></li>
+                        <li class="g_li"><a href="./aboutus.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra Solutions" id="profile_2" class="img-fluid">
+                </div>
+                <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."</p>
+                        <footer class="small text-muted">Malcolm X</footer>
+                    </blockquote>
+                    <ul class="list-unstyled social-media mt-3">
+                        <li><a href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VahCDrzLNSZx6qzTPv2d" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://youtube.com/channel/UCU8yGtWCBTXVwnbiylb3jCQ?si=UFUN4DCocKGg2tLf" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p align="center">Copyright © 2024 All Rights Reserved by Chakra Educations</p>
+    </footer>
+</div>
+   
+</body>
+</html>

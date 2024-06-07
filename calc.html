@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .full {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .outfit {
+            text-align: center;
+        }
+
+        .btn-circle, .btn-dark {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            font-size: 1.5rem;
+            margin: 5px;
+            box-shadow: 5px 9px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .output {
+            border-radius: 10px;
+            border: 2px double black;
+            height: 70px;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .output:hover {
+            background-color: grey;
+            color: white;
+            border-radius: 10px;
+            border: 4px solid black;
+            height: 70px;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            animation-name: color-fill;
+            animation-timing-function: ease;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes color-fill {
+            0% {
+                border-color: red;
+            }
+
+            30% {
+                border-color: orange;
+            }
+
+            60% {
+                border-color: yellow;
+            }
+
+            90% {
+                border-color: blue;
+            }
+
+            100% {
+                border-color: green;
+            }
+        }
+
+        .toggle-container {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-container.active .toggle-button {
+            transform: translateX(30px);
+            background-color: black;
+        }
+
+        h1 {
+            color: auto;
+            font-family: fantasy;
+        }
+
+        .left, .mode {
+            display: flex;
+            align-items: right;
+            justify-content: right;
+            margin-top: 2px;
+        }
+
+        .scientific-buttons {
+            display: none;
+        }
+
+        .toggle-button-text {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: blue;
+        }
+     .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            z-index: 9999;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .loading-animation.finished {
+            opacity: 0;
+            pointer-events: none; /* Disable mouse events after animation */
+        }
+
+        .loading-animation img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: rotateBall 2s infinite linear;
+        }
+
+        @keyframes rotateBall {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #profile {
+            border-radius: 360px;
+            height: 10%;
+            width: 10%;
+        }
+
+         .navbar {
+            background-color: #000080;
+            text-align: left;
+position:auto;
+        }
+
+        .navbar .right-button {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: right;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-top: 5px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .nav-item .nav-link ,#navigationDropdown {
+            font-size: 1.2rem;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        @keyframes glow {
+            from {
+                color: yellow;
+            }
+            to {
+                color: gold;
+            }
+        }
+
+        .navbar-toggler {
+            border-color: gold;
+            background-color: gold;
+        }
+
+        .navbar-toggler-icon {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after,
+        .navbar-toggler-icon span {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black; /* Color of the lines */
+            left: 0;
+        }
+
+        .navbar-toggler-icon::before {
+            top: 0.3em;
+        }
+
+        .navbar-toggler-icon::after {
+            bottom: 0.3em;
+        }
+
+        .navbar-toggler-icon span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+  .gg {
+    width: 100%;
+    background-color: #000080;
+    height: auto;
+}
+
+.chakra-footer {
+    background-color: #000080;
+    color: gold;
+    width: 100%;
+}
+
+
+        .footer-nav li {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .footer-nav li a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .footer-nav li a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .social-media li a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .social-media li a:hover {
+            color: #007bff;
+        }
+
+        .blockquote {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 0;
+        }
+
+        .blockquote p {
+            margin-bottom: 10px;
+        }
+
+        .blockquote footer {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        #profile_2 {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .g_li {
+            font-size: 20px;
+            color: gold;
+        }  </style>
+</head>
+<body>
+  <div class="loading-animation" id="loadingAnimation">
+        <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions"></br>
+    </div>
+<script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Set a timeout to hide the loading animation after 3 seconds
+        setTimeout(function() {
+            const loadingAnimation = document.getElementById('loadingAnimation');
+            if (loadingAnimation) {
+                loadingAnimation.style.display = 'none';
+            }
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+</script>
+
+    <!-- Content -->
+    <div id="content" style="display:auto;">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions" id="profile">
+                &nbsp;&nbsp;<a class="navbar-brand" href="#"><big><b align="center">C</b></big>hakra</a>
+                <div class="right-button">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">Home <span class="sr-only"></span></a>
+                        </li>
+  <li class="nav-item">
+                            <a class="nav-link" href="./kids.html" target = "_blank">Kids</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="./games.html" target = "_blank">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./school.html" target = "_blank">School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./notifications.html" target = "_blank">Notifications</a>
+                        </li>
+   
+        <li class="nav-link"  align = "right">
+            <select id="navigationDropdown" style="background-color: #000080; color: gold; border: none;"  class="nav-item">
+       <a class="nav-link" href = "#">         <option value="./teachersguide.html"   class="nav-link">Teachers</option></a>
+                 <a class="nav-link" href = "#">   <option value="./calc.html"  class="nav-link">Calc</option></a>
+               <a class="nav-link" href = "#">     <option value="./gk.html"  class="nav-link">G.K</option></a>
+               </select>
+        </li>
+    
+ <script>
+  setTimeout(function() {
+            document.getElementById('loadingAnimation').classList.add('finished');
+            document.getElementById('content').style.display = 'block';
+        }, 2000);
+        
+        document.getElementById('navigationDropdown').addEventListener('change', function() {
+            var url = this.value;
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    </script>
+ <li class="nav-item">
+     <a class="nav-link" href = "./ethics.html"  target = "_blank" >Ethics</option></a>
+                            
+                        </li>
+ <li class="nav-item">
+                            <a class="nav-link" href="./contact.html" target = "_blank">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./aboutus.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<div class="header">
+    <h1 align="center"><b>CAL-GERM</b></h1>
+</div>
+<div class="left">
+    <div class="toggle-container" onclick="toggle()">
+        <div class="toggle-button"></div>
+        <div class="toggle-button-text" id="toggleButtonText">ON</div>
+    </div>
+    <div class="mode">Light mode</div>
+</div>
+<br>
+<input type="button" class="btn btn-outline-primary btn-lg btn-block " value="SCIENTIFIC MODE"
+       id="scientific-mode" onclick="toggleScientificMode()">
+<br>
+<div class="full">
+    <div class="outfit">
+        <br><br>
+        <div id="output" class="output">0</div>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('1')">1</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('2')">2</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('3')">3</button>
+        <button class="btn btn-danger btn-circle" onclick="appendOperator('+')">+</button>
+        <br>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('4')">4</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('5')">5</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('6')">6</button>
+        <button class="btn btn-danger btn-circle" onclick="appendOperator('-')">-</button>
+        <br>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('7')">7</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('8')">8</button>
+        <button class="btn btn-secondary btn-circle" onclick="appendNumber('9')">9</button>
+        <button class="btn btn-danger btn-circle" onclick="appendOperator('')"></button>
+        <br>
+        
+        <button class="btn btn-danger btn-circle" onclick="appendDot()">.</button>
+        <button class="btn btn-danger btn-circle" onclick="appendOperator('/')">/</button>
+        <button class="btn btn-danger btn-circle" onclick="appendOperator('%')">%</button>
+        <button class="btn btn-danger btn-circle" onclick="calculateRoot()">RT</button>
+        <br>
+        <button class="btn btn-warning btn-circle" onclick="appendNumber('0')">0</button>
+         <input type="button" class="btn btn-outline-danger btn-lg btn-block " value="CLEAR DISPLAY"
+               onclick="clearDisplay()">
+               <button class="btn btn-warning btn-circle" onclick="calculate()">=</button>
+        
+        <div class="scientific-buttons">
+            <button class="btn btn-info btn-circle" onclick="appendFunction('Math.sin')">sin</button>
+            <button class="btn btn-info btn-circle" onclick="appendFunction('Math.cos')">cos</button>
+            <button class="btn btn-info btn-circle" onclick="appendFunction('Math.tan')">tan</button>
+            <button class="btn btn-info btn-circle" onclick="appendFunction('1 / Math.sin')">sec</button>
+            <button class="btn btn-info btn-circle" onclick="appendFunction('1 / Math.cos')">sec</button>
+            <button class="btn btn-info btn-circle" onclick="appendOperator('(')">(</button>
+            <button class="btn btn-info btn-circle" onclick="appendOperator(')')">)</button>
+        </div>
+       
+        <br><br>
+        
+    </div>
+</div>
+<script>
+    var output = document.getElementById('output');
+    var currentInput = '';
+    var scientificMode = false;
+
+    function appendNumber(number) {
+        if (number === '.' && currentInput.includes('.')) {
+            // Prevent adding multiple dots
+            return;
+        }
+        currentInput += number;
+        updateDisplay();
+    }
+
+    function appendDot() {
+        // Split the current input by operators
+        var operands = currentInput.split(/[\+\-\*\/]/);
+        // Get the last operand
+        var lastOperand = operands[operands.length - 1];
+
+        // Check if the last operand already contains a dot
+        if (!lastOperand.includes('.')) {
+            // If not, add the dot
+            currentInput += '.';
+        }
+
+        updateDisplay();
+    }
+
+    function appendOperator(operator) {
+        currentInput += ' ' + operator + ' ';
+        updateDisplay();
+    }
+
+    function calculateRoot() {
+        var number = parseFloat(currentInput);
+        var result = Math.sqrt(number);
+        currentInput = result.toString();
+        updateDisplay();
+    }
+
+    function clearDisplay() {
+        currentInput = '';
+        updateDisplay();
+    }
+
+    function calculate() {
+        try {
+            var result = eval(currentInput);
+            currentInput = result.toString();
+            updateDisplay();
+        } catch (error) {
+            currentInput = 'Error';
+            updateDisplay();
+        }
+    }
+
+    function updateDisplay() {
+        output.textContent = currentInput || '0';
+    }
+
+    function appendFunction(func) {
+        currentInput += func + '(';
+        updateDisplay();
+    }
+
+    function toggle() {
+        const toggleContainer = document.querySelector('.toggle-container');
+        toggleContainer.classList.toggle('active');
+
+        if (toggleContainer.classList.contains('active')) {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            $('.output').css('border-color', 'white');
+            $('.mode').text('Dark mode');
+            $('.btn-circle,btn-dark').css('box-shadow', '3px 5px  8px white');
+            $('#toggleButtonText').text('OFF');
+            $('#toggleButtonText').css('color', 'white');
+        } else {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            $('.output').css('border-color', 'black');
+            $('.mode').text('Light mode');
+            $('.btn-circle,btn-dark').css('box-shadow', '5px 9px  8px rgba(0, 0, 0, 0.5)');
+            $('#toggleButtonText').text('ON');
+            $('#toggleButtonText').css('color', 'black');
+        }
+    }
+
+    function toggleScientificMode() {
+        scientificMode = !scientificMode;
+        $('.scientific-buttons').toggle();
+    }
+</script>
+<div class="gg" style="width:100%; background-color:#000080;height:auto;">
+    <footer class="chakra-footer text-light" style="background-color:#000080; color:gold; width:100%;">
+        <h1 align="center">Chakra Educations</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-left">
+                    <ul class="list-unstyled footer-nav" type="disk">
+                        <li class="g_li"><a href="#">Home</a></li>
+                        <li class="g_li"><a href="./kids.html" target="_blank">Kids</a></li>
+                        <li class="g_li"><a href="./games.html" target="_blank">Games</a></li>
+                        <li class="g_li"><a href="./school.html" target="_blank">School</a></li>
+                        <li class="g_li"><a href="./notifications.html" target="_blank">Notifications</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                            <ul class="dropdown-menu">
+                                <li class="g_li"><a href="./ethics.html">Ethics</a></li>
+                                <li class="g_li"><a href="./gk.html">G.K.</a></li>
+                                <li class="g_li"><a href="./wa.html">What's App</a></li>
+                            </ul>
+                        </li>
+                        <li class="g_li"><a href="./calc.html" target="_blank">Calc</a></li>
+                        <li class="g_li"><a href="./contact.html" target="_blank">Contact</a></li>
+                        <li class="g_li"><a href="./aboutus.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra Solutions" id="profile_2" class="img-fluid">
+                </div>
+                <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."</p>
+                        <footer class="small text-muted">Malcolm X</footer>
+                    </blockquote>
+                    <ul class="list-unstyled social-media mt-3">
+                        <li><a href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VahCDrzLNSZx6qzTPv2d" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://youtube.com/channel/UCU8yGtWCBTXVwnbiylb3jCQ?si=UFUN4DCocKGg2tLf" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p align="center">Copyright © 2024 All Rights Reserved by Chakra Educations</p>
+    </footer>
+</div>
+
+</body>
+</html>

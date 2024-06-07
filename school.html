@@ -1,0 +1,1869 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+<style>
+body{
+background-color:#000080;
+color:gold;
+padding:20px;
+}
+table{
+background-color:black;
+border-color:gold;
+padding:20px;
+border-radius:20px;
+}
+tr{
+border-color:gold;
+background-color:black;
+color:white;
+padding:10px;
+}
+a{
+color:gold;
+}
+.classes {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .c_head h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .c_body {
+        padding-left: 20px;
+    }
+
+    .c_body ul {
+        list-style-type: none;
+        padding-left: 20px;
+    }
+
+    .c_body li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    
+
+    .c_body h5 {
+        font-size: 16px;
+        margin-top: 10px;
+        color: #666;
+    }
+
+    .c_body ul ul {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+
+    .c_body ul ul li {
+        margin-bottom: 10px;
+        color: #666;
+    }
+    .gg {
+    width: 100%;
+    background-color: #000080;
+    height: auto;
+}
+
+.chakra-footer {
+    background-color: #000080;
+    color: gold;
+    width: 100%;
+}
+
+
+        .footer-nav li {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .footer-nav li a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .footer-nav li a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .social-media li a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .social-media li a:hover {
+            color: #007bff;
+        }
+
+        .blockquote {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 0;
+        }
+
+        .blockquote p {
+            margin-bottom: 10px;
+        }
+
+        .blockquote footer {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        #profile_2 {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .g_li {
+            font-size: 20px;
+            color: gold;
+        }
+
+        #admin {
+            font-style: serif;
+            color: #000080; /* Change the color to your desired color */
+        }
+       .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            z-index: 9999;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .loading-animation.finished {
+            opacity: 0;
+            pointer-events: none; /* Disable mouse events after animation */
+        }
+
+        .loading-animation img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: rotateBall 2s infinite linear;
+        }
+
+        @keyframes rotateBall {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #profile {
+            border-radius: 360px;
+            height: 10%;
+            width: 10%;
+        }
+
+         .navbar {
+            background-color: #000080;
+            text-align: left;
+position:auto;
+        }
+
+        .navbar .right-button {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: right;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-top: 5px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .nav-item .nav-link ,#navigationDropdown {
+            font-size: 1.2rem;
+            color: gold;
+            animation: glow 1.5s infinite alternate;
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        @keyframes glow {
+            from {
+                color: yellow;
+            }
+            to {
+                color: gold;
+            }
+        }
+
+        .navbar-toggler {
+            border-color: gold;
+            background-color: gold;
+        }
+
+        .navbar-toggler-icon {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after,
+        .navbar-toggler-icon span {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black; /* Color of the lines */
+            left: 0;
+        }
+
+        .navbar-toggler-icon::before {
+            top: 0.3em;
+        }
+
+        .navbar-toggler-icon::after {
+            bottom: 0.3em;
+        }
+
+        .navbar-toggler-icon span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+</style>
+</head>
+<body>
+  <div class="loading-animation" id="loadingAnimation">
+        <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions"></br>
+    </div>
+<script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Set a timeout to hide the loading animation after 3 seconds
+        setTimeout(function() {
+            const loadingAnimation = document.getElementById('loadingAnimation');
+            if (loadingAnimation) {
+                loadingAnimation.style.display = 'none';
+            }
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+</script>
+
+    <!-- Content -->
+    <div id="content" style="display:auto;">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions" id="profile">
+                &nbsp;&nbsp;<a class="navbar-brand" href="#"><big><b align="center">C</b></big>hakra</a>
+                <div class="right-button">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+  <li class="nav-item">
+                            <a class="nav-link" href="./kids.html" target = "_blank">Kids</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="./games.html" target = "_blank">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./school.html" target = "_blank">School</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./notifications.html" target = "_blank">Notifications</a>
+                        </li>
+   
+        <li class="nav-link"  align = "right">
+            <select id="navigationDropdown" style="background-color: #000080; color: gold; border: none;"  class="nav-item">
+       <a class="nav-link" href = "#">         <option value="./teachersguide.html"   class="nav-link">Teachers</option></a>
+                 <a class="nav-link" href = "#">   <option value="./calc.html"  class="nav-link">Calc</option></a>
+               <a class="nav-link" href = "#">     <option value="./gk.html"  class="nav-link">G.K</option></a>
+               </select>
+        </li>
+    
+ <script>
+  setTimeout(function() {
+            document.getElementById('loadingAnimation').classList.add('finished');
+            document.getElementById('content').style.display = 'block';
+        }, 2000);
+        
+        document.getElementById('navigationDropdown').addEventListener('change', function() {
+            var url = this.value;
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    </script>
+ <li class="nav-item">
+     <a class="nav-link" href = "./ethics.html"  target = "_blank" >Ethics</option></a>
+                            
+                        </li>
+ <li class="nav-item">
+                            <a class="nav-link" href="./contact.html" target = "_blank">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./aboutus.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav></br></br>
+<div class="containers mt-4">
+    <h2 align = "center" style = "font-family:serif;">Welcome to Chakra's School Page</h2>
+    <h5 align = "center" style = "font-family:serif;"> All subject text books and work books from class 1 to 10</h5><select id="class-select" class="form-control">
+        <option value="fst">1<sup>st</sup> Class</option>
+        <option value="snd">2<sup>nd</sup> Class</option>
+        <option value="trd">3<sup>rd</sup> Class</option>
+        <option value="fou">4<sup>th</sup> Class</option>
+        <option value="fiv">5<sup>th</sup> Class</option>
+        <option value="six">6<sup>th</sup> Class</option>
+        <option value="seven">7<sup>th</sup> Class</option>
+        <option value="eig">8<sup>th</sup> Class</option>
+        <option value="nin">9<sup>th</sup> Class</option>
+        <option value="ten">10<sup>th</sup> Class</option>
+    </select>
+
+     <div id="class-tables" class="mt-4">
+        <div id="fst" class="class-table" style="display: none;">
+            <h3>1<sup>st</sup> Class</h3>
+            <table id="fst-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Subject</th>
+                        <th>Download Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="fst-row-1">
+                        <td>1st</td>
+                        <td>Telugu Text Book</td>
+                        <td><a href="https://drive.google.com/file/d/1WReve317AmqvcpWBfy5q-DqxyB_kNwJV/view?usp=sharing">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-2">
+                        <td>1st</td>
+                        <td >English Text Book</td>
+                        <td><a href="https://drive.google.com/file/d/1R8D-XsJfItTNeBOvnzSZd2GQoc3BG5iA/view?usp=sharing">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-3">
+                        <td>1st</td>
+                        <td >Maths Semister 1 Text Book</td>
+                        <td><a href="https://drive.google.com/file/d/1RWCsFzTEWBqJVx38eoIAO47AQcqBnsTP/view?usp=sharing">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-4">
+                        <td>1st</td>
+                        <td >Maths Semister 2 Text Book</td>
+                        <td><a href="https://drive.google.com/file/d/1wy9DcSgtzIzPfSujxuMR3bC-RClk47F4/view?usp=sharing">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-5">
+                        <td>1st</td>
+                        <td >English_Textbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=11fjBmtiKkMi4ziGCATPdFjg-pW9I6ubS&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-6">
+                        <td>1st</td>
+                        <td >English_Workbook.pdf</td>
+                        <td "><a href="https://drive.google.com/open?id=1QoIaTKuUEdbzSmzzWGQtE0g6P_5rGr1R&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-7">
+                        <td>1st</td>
+                        <td >Maths_SEM-1_Textbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=1HTl9kXeguhwu_9QQOpWmmCt05RQ8EsHW&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-8">
+                        <td>1st</td>
+                        <td >Maths_SEM-1_Workbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=1BWlRtMows4bNRAut9qS6uLrHJSroE0XH&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-9">
+                        <td>1st</td>
+                        <td >Maths_SEM-2_Textbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=10QKUQhTTRRAEA82x9axf6wZAkmHnfl_M&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-10">
+                        <td>1st</td>
+                        <td >Maths_SEM-2_Workbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=1IvqihS78O35_rnGyxaLadDJMYNUO9a8V&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                    <tr id="fst-row-11">
+                        <td>1st</td>
+                        <td >Telugu_Workbook.pdf</td>
+                        <td ><a href="https://drive.google.com/open?id=1Mc0--OeViOmiUzApoiaXgy5PQd-FM-sa&amp;usp=drive_copy">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+      <div id="class-tables" class="mt-4">
+    <div id="snd" class="class-table" style="display: none;">
+        <h3>2<sup>nd</sup> Class</h3>
+        <table id="snd-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="snd-row1">
+                    <td>2nd</td>
+                    <td>Telugu</td>
+                    <td><a href="https://drive.google.com/file/d/1JcydajvxSKC1Xc6rqP95tYvqpkaf1THg/view" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row2">
+                    <td>2nd</td>
+                    <td>English</td>
+                    <td><a href="https://drive.google.com/file/d/1_1IzzRz4ujVa1T8gGiZ--AiocOSe7JgU/view" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row3">
+                    <td>2nd</td>
+                    <td>Maths Semister 1</td>
+                    <td><a href="https://drive.google.com/file/d/164VEDghZDjXvVoVjohQ7Q8oCdhHwMIDk/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row4">
+                    <td>2nd</td>
+                    <td>Maths Semister 2</td>
+                    <td><a href="https://drive.google.com/file/d/1dhaXaGgDFcLxGA7Os-oml0eawbtvyI9L/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row5">
+                    <td>2nd</td>
+                    <td>Telugu Workbook</td>
+                    <td><a href="https://drive.google.com/open?id=1vvbx5GzlGel_S34DO5FBWVkj_5zzcSsO" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row6">
+                    <td>2nd</td>
+                    <td>Telugu Text Book FL</td>
+                    <td><a href="https://drive.google.com/open?id=1yeSklDjFPWoT-jaPEkBfZogRfccsiS6W" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row7">
+                    <td>2nd</td>
+                    <td>Maths SEM-2 Workbook</td>
+                    <td><a href="https://drive.google.com/open?id=1fqc794C-g9WKErEKtR6HocArcG-xDnJs" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row8">
+                    <td>2nd</td>
+                    <td>Maths SEM-2 Textbook</td>
+                    <td><a href="https://drive.google.com/open?id=1jZd0EhMMzHzdE_33JI1Zbw6ikldJvHdo" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row9">
+                    <td>2nd</td>
+                    <td>Maths SEM-1 Workbook</td>
+                    <td><a href="https://drive.google.com/open?id=16TUeI_yEPTwfkYZNC9BWB5axxVlQYT8a" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row10">
+                    <td>2nd</td>
+                    <td>Maths SEM-1 Textbook</td>
+                    <td><a href="https://drive.google.com/open?id=1QYsx_ssl9-kA6yeNwH1MQWoMtwf6cGsY" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row11">
+                    <td>2nd</td>
+                    <td>English Workbook</td>
+                    <td><a href="https://drive.google.com/open?id=1w7DcmkZYctZ0Bx20CO6ZOTr3VSSVhPsV" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row12">
+                    <td>2nd</td>
+                    <td>English Textbook</td>
+                    <td><a href="https://drive.google.com/open?id=1G88A22mm9WEI1AaR2NOOKVTndkKrHTc7" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row13">
+                    <td>2nd</td>
+                    <td>Telugu Text Book (2021)</td>
+                    <td><a href="https://drive.google.com/file/d/1IdNYINWg5R-RzyHLNu_O_LiREwE6CMgE/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row14">
+                    <td>2nd</td>
+                    <td>Telugu Work Book (2021)</td>
+                    <td><a href="https://drive.google.com/file/d/1H9gSR_tKD19hFbWZX7FCqL0JFVe8pCAY/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row15">
+                    <td>2nd</td>
+                    <td>English Text Book (2021)</td>
+                    <td><a href="https://drive.google.com/file/d/19_SzSLDO-bdvsf9ibi64pXDpadovnZBj/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="snd-row16">
+                    <td>2nd</td>
+                    <td>English Work Book (2021)</td>
+                    <td><a href="https://drive.google.com/file/d/1w9urWBb0GKhs29x_mYvZah0mqZ_Nu-L3/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div id="class-tables" class="mt-4">
+    <div id="trd" class="class-table" style="display: none;">
+        <h3>3<sup>rd</sup> Class</h3>
+        <table id="trd-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="trd-row1">
+                    <td>3rd</td>
+                    <td>Telugu</td>
+                    <td><a href="https://drive.google.com/file/d/1quAW1c0pH9yOwEcyOZDmdPO6DeobxOuE/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row2">
+                    <td>3rd</td>
+                    <td>Telugu Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1Q6bYyl7uMRc2IkixO0HXX4-dv2pVdQR9/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row3">
+                    <td>3rd</td>
+                    <td>English</td>
+                    <td><a href="https://drive.google.com/file/d/1MuESoPcEzZrgwzhQMyqI9MhWQoITVZ-N/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row4">
+                    <td>3rd</td>
+                    <td>English Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1sxYmlzRkHCL7YdUr3iefOwL7zh8FRPZT/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row5">
+                    <td>3rd</td>
+                    <td>Maths (Telugu Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1Z4wKX5KuI34m11BOciaL52pd4lue21aa/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row6">
+                    <td>3rd</td>
+                    <td>Maths Workbook (EM and TM)</td>
+                    <td><a href="https://drive.google.com/file/d/12khuli3tw7dQnFPdjTOG4iDrHFsdTN8q/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row7">
+                    <td>3rd</td>
+                    <td>Maths (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1c4fKKqZU1-38RiwcvJteaw5ybJeTF8KI/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row8">
+                    <td>3rd</td>
+                    <td>EVS (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1dpvRuwzZiYkPnRZjvtXjKewG1kZA6Y83/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row9">
+                    <td>3rd</td>
+                    <td>EVS Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1vRbf24lWGLbdFfqA7e9bdsyXD5Rp0KhB/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="trd-row10">
+                    <td>3rd</td>
+                    <td>Old Text Books (Reference)</td>
+                    <td><a href="https://drive.google.com/drive/folders/11hIXbl2DfBnsK2jwI9Kr2aP3eydW4J7p?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="class-tables" class="mt-4">
+    <div id="fou" class="class-table" style="display: none;">
+        <h3>4<sup>th</sup> Class</h3>
+        <table id="fou-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="fou-row1">
+                    <td>4th</td>
+                    <td>Telugu</td>
+                    <td><a href="https://drive.google.com/file/d/1drjE29QcqpoG8JMseru0KCM2oHnimFHi/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row2">
+                    <td>4th</td>
+                    <td>Telugu Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1nay9ELWXGn7CR6lu-W8xh3y8tlrq-5sK/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row3">
+                    <td>4th</td>
+                    <td>English</td>
+                    <td><a href="https://drive.google.com/file/d/1chqIg2DSSOGyAuIEUhLXyzr6IRXxwuBD/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row4">
+                    <td>4th</td>
+                    <td>English Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1Pu5KCYrEYsSEiJvvCrMXyDpQ7KWaQpVc/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row5">
+                    <td>4th</td>
+                    <td>Maths (Telugu Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1YBJaDebmEddPCUz0DnxUW1o78PWn0Gzq/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row6">
+                    <td>4th</td>
+                    <td>Maths (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/16j6kW4IhMi87b5M-ItSMLvGy5ybjIiFJ/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row7">
+                    <td>4th</td>
+                    <td>Maths Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1WKAbT72OeVADic2ZugSnq1zYGH7A8Nbs/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row8">
+                    <td>4th</td>
+                    <td>EVS (Telugu Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1RXMVX_I8xG7naHkcqiR67x09GLzQ8eUh/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row9">
+                    <td>4th</td>
+                    <td>EVS (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1_aOmR-OyEccJqaO9UI-ZxmNgJv2dI7bH/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row10">
+                    <td>4th</td>
+                    <td>EVS Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1Pxrz4Io1k8DNIrNXsLNKZ-VYavjpmCmX/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fou-row11">
+                    <td>4th</td>
+                    <td>Old Text Books (Reference)</td>
+                    <td><a href="https://drive.google.com/drive/folders/18-rk6n-0n2ASmTkJp8RSigGtT2pshz_k?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="class-tables" class="mt-4">
+    <div id="fiv" class="class-table" style="display: none;">
+        <h3>5<sup>th</sup> Class</h3>
+        <table id="fiv-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="fiv-row1">
+                    <td>5th</td>
+                    <td>Telugu</td>
+                    <td><a href="https://drive.google.com/file/d/1ytZMsRU1P0fhBEzI3XmJLFq3y1eu_NeV/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row2">
+                    <td>5th</td>
+                    <td>Telugu Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1vUd_2V93pZin98isVF1XlU35anu9WoQB/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row3">
+                    <td>5th</td>
+                    <td>English</td>
+                    <td><a href="https://drive.google.com/file/d/1y8yXfoQf9PFIacIH21BsKMt8dYJc0Xxw/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row4">
+                    <td>5th</td>
+                    <td>English Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1jqxFgJd5j1ew1b9bhnp5bGNln5xR3bvV/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row5">
+                    <td>5th</td>
+                    <td>Maths (Telugu Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/19Y-58piUlUqMRUF_bcDJhE_9J1CXkS3h/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row6">
+                    <td>5th</td>
+                    <td>Maths (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1B5K1e6ZM5dPgaZxmgzKYPjURSxmy9q79/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row7">
+                    <td>5th</td>
+                    <td>Maths Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/10JyOzuUjpqoZke6qnYO8r9G4XjnY2wW2/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row8">
+                    <td>5th</td>
+                    <td>EVS (Telugu Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1lAPieeJ1ZHNatj7EmQTWQ9GU5nbgcMzD/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row9">
+                    <td>5th</td>
+                    <td>EVS (English Medium)</td>
+                    <td><a href="https://drive.google.com/file/d/1sdQ6mGL0NDM3r3xSZ0Ok4bnW4_AhrhOp/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row10">
+                    <td>5th</td>
+                    <td>EVS Workbook</td>
+                    <td><a href="https://drive.google.com/file/d/1WKiiVZqYRzzX1XdRokO8VqXnDCilZkJj/view?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+                <tr id="fiv-row11">
+                    <td>5th</td>
+                    <td>Old Text Books (Reference)</td>
+                    <td><a href="https://drive.google.com/drive/folders/17vr0JN2mvO296_EO2SoeAOLt2grqLXFC?usp=sharing" target="_blank">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+      <div id="class-tables" class="mt-4">
+ <div id="six" class="class-table" style="display: none;">
+        <h3>6<sup>th</sup> Class</h3>
+        <table id="six-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="six-row1">
+                    <td>6</td>
+                    <td>Telugu Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1WVbCTRBAvUGLLQG2HePs9uadu5E-giZB/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row2">
+                    <td>6</td>
+                    <td>English Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1BxAzqv1xOdwEB_i_cUmTi-hJ8C1Pqybc/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row3">
+                    <td>6</td>
+                    <td>Hindi Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1JME_z7Q7Uf2Je7Nu7wlQ15DrRh-i1eyU/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row4">
+                    <td>6</td>
+                    <td>Maths Telugu Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1ZeS_ftKzE6uVr-ruXoQ6HWfvsGhQg0wz/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row5">
+                    <td>6</td>
+                    <td>Maths English Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1GmPurPl2Al8Gxo4qYA96H4eLGozS7Zsj/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row6">
+                    <td>6</td>
+                    <td>Science Telugu Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1oqLw22w_ow7Z89GfwN4qkhmLrhJOQLsP/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row7">
+                    <td>6</td>
+                    <td>Science English Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1MpIlKhTXhki5fZ_izbkJIqTjWak5T_uA/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row8">
+                    <td>6</td>
+                    <td>Social English Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1Ww7DmKP4nRPw0OQ2r7WL06394jhxYv8V/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row9">
+                    <td>6</td>
+                    <td>Social Telugu Medium Text Book</td>
+                    <td><a href="https://drive.google.com/file/d/1X8hHBMweLZyTzbNREXOtZJqmgYJjH-ql/view?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+                <tr id="six-row10">
+                    <td>6</td>
+                    <td>Old Text Books (Reference)</td>
+                    <td><a href="https://drive.google.com/drive/folders/1AoEp9ofw8qCpdNl1A-oE9HZtXdtxM18f?usp=sharing" target="_blank">Click here to download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<div id = "class-tables" class = "mt-4">
+ <div id="seven" class="class-table" style="display: none;">
+        <h3>7<sup>th</sup> Class</h3>
+        <table id="seven-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7th</td>
+                    <td>English Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/English%20Books/7_English_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Hindi Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Hindi%20Books/7_Hindi_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Maths SEM-1 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Maths%20Books/7_Maths_SEM-1_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Science SEM-1 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Science%20Books/7_Science_SEM-1_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Social SEM-1 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Soical%20Books/7_Soical_SEM-1_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Telugu Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Telugu%20Books/7_Telugu_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Telugu Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1WPQfSajvOpTSBwez1hef8BY1Q9Yq_dpD">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Telugu Second Lang Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=18PvZ0eyKREaYzaXH859ecGDpbZwp47o7">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>URDU Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1-bj9PPgo18H_rjFw230C_uAUmpugy38J">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Hindi Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1l8u0MmHxsLXFqj7ABkffG6oayfgM0i9V">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>English Supplementary Reader 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1Qigk5HJaeh5wn6kCL6zHg1Rw9URfPfsM">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>English Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1pUGKa5Iw4ffEEmtQRqVFZJp_8UgF3eoN">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Maths Sem-2 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1ydGaTUZ2FmDw3zXN-6Ngc0QMV_pZQGNS">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Maths Sem-1 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=12PhPWhi6Q04xjRsna3QT_0LaAwPXoOuP">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>EVS Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1VByP9IoAKk2rYjkemE78mL3oXuKF6Fj1">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>General Science Sem-2 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1ES7Ncopc9MjbM7ZmsdZn5ptXiuqHvURH">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>General Science Sem-1 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1b_HasPkue97A2VE_PuTxZIFjc61JWKRI">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Social Sem-2 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1_flu9s2KJXScCriCjCZ3Lsm_MlMfDSXR">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Social Sem-1 Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1S01tIjh8Kmg4FI25gAjJLaoOGDw5dTX-">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Sanskrit OC Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=17R7My9v4Ysi_Aa4vhKtLSTpyiCHwGSk8">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Sanskrit CC Text Book 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1jy9Yj-cUgJ9Mgc3NLj6OubXs1GNF_xsW">Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>English Supplementary Reader</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/English%20Books/7_English_Suplementary%20Reader.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>English Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/English%20Books/7_English_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>EVS Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/EVS%20Books/7_EVS_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>General Science SEM-1 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/General%20Science%20Books/7_General%20Science_SEM-1_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>General Science SEM-2 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/General%20Science%20Books/7_General%20Science_SEM-2_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Hindi Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Hindi%20Books/7_Hindi_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Maths SEM-1 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Maths%20Books/7_Maths_SEM-1_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Maths SEM-2 Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Maths%20Books/7_Maths_SEM-2_Textbook.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Sanskrit CC</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Sanskrit%20Books/7_Sanskrit_CC.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Sanskrit OC</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Sanskrit%20Books/7_Sanskrit_OC.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Telugu FL</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Telugu%20Books/7_Telugu_FL.pdf/7">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>Telugu SL</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Telugu%20Books/7_Telugu_SL.pdf/7">Click here to download</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+          <div id="class-tables" class="mt-4">
+<div id="eig" class="class-table" style="display: none;">
+        <h3>8<sup>th</sup> Class</h3>
+        <table id="eight-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8th</td>
+                    <td>Biology SEM-1 Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1Q0upenbjx0Xrsv9_xpB1JfjEXWgKxC2o/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Biology SEM-2 Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1L-puke6TlBLRATYVV2-J18QN6DUole0s/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>English Non-detail</td>
+                    <td><a href="https://drive.google.com/file/d/1PxKE78QcXhr0GX8O5B3LeIZqJoX5tEkr/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>English Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1WyIJk9tj49S-NmPnIlLu615AihSYF9Yy/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Hindi Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1kxMNzJs5vE9tOXP8c9jmGb66ZCc2ZncA/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Maths SEM-1 Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1D5xaRM0w1yC7m_w70Xl42h28xZNBiLN0/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Physics SEM-1 Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1ocSp-6yRK_CK0mt135oex-vGHpCTW-Zh/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Physics SEM-2 Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1GWfKrZ9SfihnDR6ht9jKrqdl-OSV3T-H/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social Geography Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1Bg-WgUGu_nARuR1rkilBY2p5JAn2wszA/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social History Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1u9r_vJvY2NZy773ZmIzQQT07DIGL3FLJ/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social Politics Textbook</td>
+                    <td><a href="https://drive.google.com/file/d/1yYPtHnYkvWS5TU_-6mZjhV1hePiZ0PYU/view">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Telugu Textbook</td>
+                    <td><a href="https://cse.ap.gov.in/downloadBooks/Telugu%20Books/8_Telugu_Textbook.pdf/8">Click here to download</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Telugu Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1dAn3qmJIiV4ElARr3f43u52aZdZFRKWC">Download 8th Telugu Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Hindi Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1YFUlRv3kqu7bRlvyBguN5U9LpiJRsAxT">Download 8th Hindi Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>English Textbook 2023</td>
+                    <td><a href="https://drive.google.com/file/d/1ynkUiHXSPCt-P34oy5pkw2LV_nsQWYb4/view">Download 8th English Text Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>English Supplementary 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1lFPKruA3eTMPWxlj2v91edH-c2qgabBG">Download 8th Eng Supplementary Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Maths SEM-1 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=14gzojS8QQR20v5Hd1hvrmJ4K2PaNzGNr">Download 8th Maths SEM-1 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Maths SEM-2 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1Sfzdhoz81EdGLKWBZJBifE6--luHYACD">Download 8th Maths SEM-2 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Physics SEM-1 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1DwDAfKJls8sdBchdpAJlblx2FKVu9oIE">Download 8th Physics SEM-1 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Physics SEM-2 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1a2m8gJHnwwOtlUdVSiQaes4ORo2ovl-t">Download 8th Physics SEM-2 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Biology SEM-1 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1dq_FAziScO3ZwWQ5FgHcLevdGerKiHBA">Download 8th Biology SEM-1 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Biology SEM-2 Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1j5f1tFBkWnqRnXEDyJP4sSk1ecepfJlS">Download 8th Biology SEM-2 Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>EVS Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1GQhxWb1YWecLvifUBWbAjurwuEUZSlrY">Download 8th EVS Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social Geography Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1n7TSs6JgGi_OkLeCm3xcWhDk7uHW9v0N">Download 8th Social Geography Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social History Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1pk5nMe1d9zSGJFhfTFXLvacJFPY9Zdr-">Download 8th Social History Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Social Politics Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1H68o09V2_thXcZs79jisiSFNt1dtTOkt">Download 8th Social Politics Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>Sanskrit OC Textbook 2023</td>
+                    <td><a href="https://drive.google.com/open?id=1xaT7NhKCnS5ZULcBwozMRrxvEQOpYiXt">Download 8th Sanskrit OC Click Here</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    
+    
+   <div id="class-tables" class="mt-4">
+        <div id="nin"  class="class-table" style="display: none;">
+          <table width="100%" border="1" cellspacing="0" cellpadding="2">
+<table>
+  <tr>
+    <th colspan="2" scope="col">APSCERT 9th Text Books [English and Telugu Medium] </th>
+  </tr>
+  <tr>
+    <td><div align="center"><strong>Title</strong></div></td>
+    <td><div align="center"><strong>Download Link </strong></div></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu First Lang Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1VGwwpSiBYqWehxI3v_Bc0rQc2B8AwC9x">Download 9th Telugu First Lang Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu Second Lang Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1wSaZ-_t1TOsnMWWSXmJK5dIm0MxSKzCh">Download 9th Telugu 2nd Lang Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu Upavachakam Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1o0kXp_ES3_PAF12jaJYdELABjdIHYFq3">Download 9th Telugu Upavachakam  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Hindi Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/17uCIF7BWOG3M_qX5r9J4epqTpH1NdZlp">Download 9th HIndi Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Hindi Non-Details Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1qeqINjpWQ9TbLf7xXqj_HYeg9njVExpi">Download 9th Non-Details    Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1ERMXjnLK6TIHIbYWfTVHp2-gk5-ZahGa">Download 9th English Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Workbook  2023 </td>
+    <td><a href="https://drive.google.com/open?id=1BrspNQINegVaxXodedOR6LI5lFu5DZHc">Download 9th English Workbook Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Non Detailed 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1YLWeDRA8LJkT-syu7aK5u73GazgSjC1k">Download 9th English Supplementary Reader Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Sanskrit CC Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1u7K-3AzbRi4MC59S_PCJSFBJPOT7h0U7">Download 9th Sankrit CC Click Here </a></td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+    <td>APSCERT 9th Maths Sem-1 Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1FCfm9Ipjhr8Ms8XPqWbhOcUpW2pFT0Ge">Download 9th Maths Sem-1 Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Maths Sem-2 Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1mJiphJBpV-4Pqvz4pfJMFFYD6iZck3B-">Download 9th Maths Sem-2 Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-1 Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1yXsvlfMllBGvjcDb1szbKy7bbKdKD8g1">Download 9th Physics Sem-1 Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-2 Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1e5eQ_VVYVxd4OLC739QTDNnJRzOrba6w">Download 9th Phyhsics Sem-2 Text Book Click Here </a></td>
+  </tr>
+  
+   <tr>
+    <td>APSCERT 9th Biology Text Book 2024</td>
+   <td><a href="https://drive.google.com/file/d/1o2Bvh0QxZJ5X_Bdkk96oYK9Xy5elZ5PZ">Download 9th Biology Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th EVS Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1eeAIRc4jWRXM8Y3oRXfVfX7XFJ5lDXx8">Download 9th EVS Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Georgraphy Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1Z1ma8O49vEW8UQE3wIQJiHUVwN1-xDgz">Download 9th Social Georgraphy Text Book Click Here </a></td>
+  </tr>
+   
+  <tr>
+    <td>APSCERT 9th Social History  Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1hFE6rDGDKLfEhxq5oFpd8UdgsPX-hwYT">Download 9th Social History Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Politics Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1turKh_k_mI-3moiKC_AxDh4ADYGyKxZy">Download 9th Social Politics Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Economics Text Book 2024 </td>
+    <td><a href="https://drive.google.com/file/d/1V2QJdSPvYjRH5YqgGyVwoa1zQtZAO6Ng">Download 9th Social Economics Text Book Click Here </a></td>
+  </tr>
+ 
+  
+</table>
+    
+    
+    
+      <div align="left"><span style="color: #2b00fe; font-size: medium;"><b>Download AP SCERT 9th Text Books 2023</b></span></div>
+    
+ 
+    
+    
+    <div align="left">The 9th Class New Text Books based on CBSE Syllabus released by APSCERT. Here are the APSCERT 9th Text Books for 2023-24 onwards.</div>
+    
+    
+    
+    <table width="100%" border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <th colspan="2" scope="col">APSCERT 9th Text Books [English and Telugu Medium] </th>
+  </tr>
+  <tr>
+    <td><div align="center"><strong>Title</strong></div></td>
+    <td><div align="center"><strong>Download Link </strong></div></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu First Lang Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1VGwwpSiBYqWehxI3v_Bc0rQc2B8AwC9x">Download 9th Telugu First Lang Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu Second Lang Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1wSaZ-_t1TOsnMWWSXmJK5dIm0MxSKzCh">Download 9th Telugu 2nd Lang Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Telugu Upavachakam Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1o0kXp_ES3_PAF12jaJYdELABjdIHYFq3">Download 9th Telugu Upavachakam  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Hindi Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=19KAZJNF7LtkL8eFeFYXiMNIUeBXL72i5">Download 9th HIndi Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Hindi Non-Details Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1qeqINjpWQ9TbLf7xXqj_HYeg9njVExpi">Download 9th Non-Details    Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1WFfRT0apodGwJ4bkOXxZG-orPFl3H0Ia">Download 9th English Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Workbook  2023 </td>
+    <td><a href="https://drive.google.com/open?id=1BrspNQINegVaxXodedOR6LI5lFu5DZHc">Download 9th English Workbook Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th English Supplementary Reader 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1o-ntWfIpVKQ84cCU3yQu8bxHAP0L8_p9">Download 9th English Supplementary Reader Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Sanskrit CC Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1u7K-3AzbRi4MC59S_PCJSFBJPOT7h0U7">Download 9th Sankrit CC Click Here </a></td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+    <td>APSCERT 9th Maths Sem-1 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1ALTPUsotaY-8w_odgCv3jaT5Rk94g7k8">Download 9th Maths Sem-1 Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Maths Sem-2 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=16cG2WvJpJJBHP2iTJwgnfvRfKxcr3bdn">Download 9th Maths Sem-2 Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-1 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1_KfxLbY30tRjLjcuFehC3R7zBr_kF2BU">Download 9th Physics Sem-1 Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-2 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=15LIVi08GoRzQ6L7fTCwIL1KR3N7fWa2O">Download 9th Phyhsics Sem-2 Text Book Click Here </a></td>
+  </tr>
+  
+   <tr>
+    <td>APSCERT 9th Biology Text Book 2023</td>
+   <td><a href="https://drive.google.com/open?id=1FbQ-MFOs7Qu-6b9v2OKS5fKlReICIVtP">Download 9th Biology Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th EVS Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1eeAIRc4jWRXM8Y3oRXfVfX7XFJ5lDXx8">Download 9th EVS Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Georgraphy Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1Z1ma8O49vEW8UQE3wIQJiHUVwN1-xDgz">Download 9th Social Georgraphy Text Book Click Here </a></td>
+  </tr>
+   
+  <tr>
+    <td>APSCERT 9th Social History  Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1hFE6rDGDKLfEhxq5oFpd8UdgsPX-hwYT">Download 9th Social History Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Politics Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1turKh_k_mI-3moiKC_AxDh4ADYGyKxZy">Download 9th Social Politics Text Book Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Economics Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1FfUpvBbXGlzS6caaohUYMngqFznw86S6">Download 9th Social Economics Text Book Click Here </a></td>
+  </tr>
+ 
+  
+</table>
+    
+
+    
+    
+  <table width="100%" border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <th colspan="2" scope="col">APSCERT 9th Text Books [URDU MEDIUM] </th>
+  </tr>
+  <tr>
+    <td><div align="center"><strong>Title</strong></div></td>
+    <td><div align="center"><strong>Download Link </strong></div></td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+    <td>APSCERT 9th Maths Urdu Medium Sem-1 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1XXy_ZE0k8mwO49Oar7xyJQzZc-Z2svWV">Download 9th Maths Urdu Sem-1 Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Maths Urdu Medium Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=19wWY4HJ-C4efYVAL7rcdNAt5VxjZ39TY">Download 9th Maths Urdu Sem-2 Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-1 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1jvorIZ_ODMupq53hY6vVeLytMvINYb_m">Download 9th Physics Urdu Sem-1  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Physics Sem-2 Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1BjvGu5o6TrroLnF8v4tOM0welWBWDwLP">Download 9th Phyhsics Urdu Sem-2  Click Here </a></td>
+  </tr>
+  
+   <tr>
+    <td>APSCERT 9th Biology Urdu Text Book 2023</td>
+    <td><a href="https://drive.google.com/open?id=1GmDGumOo_zz2eKHYw4sZD99GEbA8MEOY">Download 9th Biology Urdu Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th EVS Urdu Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1UfgtJsCeDxRyYAA-ollWmBxSzpvz-Loa">Download 9th EVS Urdu  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Georgraphy Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1sLIfycf7udlFhmwuEYX1dxCXCgCJIAYe">Download 9th  Georgraphy Urdu Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social History  Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1boVkVWYRVeeMF-xy2yw8ukDVq6Body68">Download 9th  History Urdu  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Politics Text Book 2023 </td>
+    <td><a href="https://cse.ap.gov.in/downloadBooks/Social%20Books/9_Social_Politics_Urdu_Textbook.pdf/9">Download 9th  Politics Urdu  Click Here </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 9th Social Economics Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1HHJBPdFt0VfHF_VUA3uMeE_A0a-N6gUh">Download 9th  Economics Urdu  Click Here </a></td>
+  </tr>
+ 
+  
+</table><br>
+    
+    
+
+
+	
+	
+	
+	<div align="left"><br /></div><div align="left"><span style="color: red; font-size: medium;"><b>Download AP SCERT 9th Text Books 2022</b></span></div>
+
+  <div style="text-align: left;background-color:black;color:gold;"><ul style="text-align: left;background-color:black;color:gold;">
+  <li><a href="https://drive.google.com/file/d/1Rq8OpggC6MVIqltauGf3OW_FKNEgri5S/view?usp=sharing">AP SCERT 9th Class Telugu Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/17aMFec_RUeWGbv1Ttr_JfoW077weGZaK/view?usp=sharing">AP SCERT 9th Class English Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/1-40IXGkglTufQxPUZCmuZn6fmgw4ypjW/view?usp=sharing">AP SCERT 9th Class Hindi Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/1YeKBMDuvHVQCDTCr_z6_TXgwBblf3ZUB/view?usp=sharing">AP SCERT 9th Class Maths Telugu Medium Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/18EbLXb7G3S98i9LhIGcP2AcX13IZnqjr/view?usp=sharing">AP SCERT 9th Class Maths English Medium Text Book Download</a></li>
+  
+    </ul>
+    
+    <ul >
+      
+      <li><a href="https://drive.google.com/file/d/1Ty_fbOCDOIaDUQaJpbNemjXbDyRo7eaW/view?usp=sharing">AP SCERT 9th Class Physics Telugu Medium Text Book Download</a></li>
+      <li><a href="https://drive.google.com/file/d/1ABhuUzXIoXDGSzb6_rGGM0wt3GwK90Fg/view?usp=sharing">AP SCERT 9th Class Physics English Medium Text Book Download</a></li>
+      
+      
+    <li><a href="https://drive.google.com/file/d/1qYQkFV2DuYI3yzLCkyFu73ZYCrre8_PS/view?usp=sharing">AP SCERT 9th Class Biology Telugu Medium Text Book Download</a></li>
+    <li><a href="https://drive.google.com/file/d/17EDqYGKHIfv6jKRrpuBX0z_lr-qI6PSW/view?usp=sharing">AP SCERT 9th Class Biology English Medium Text Book Download</a></li> 
+    <li><a href="https://drive.google.com/file/d/1DOEw-MmhA42B8K4Glq_DqE3D8tbVZxZf/view?usp=sharing">AP SCERT 9th Class Social English Medium Text Book Download</a></li> 
+    <li><a href="https://drive.google.com/file/d/1c-IvwKSXgOUrdxVxxIDGG04hcivRQD4o/view?usp=sharing">AP SCERT 9th Class Social Telugu Medium Text Book Download</a></li> 
+    
+   
+  </ul>
+</div>
+</div>
+</div>
+    
+    
+
+ <div id="class-tables" class="mt-4">
+
+        <div id="ten" class="class-table" style="display: none;">
+         <table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <th colspan="2" scope="col">APSCERT 10th Class Text Books 2023 </th>
+  </tr>
+  <tr>
+    <td>Text Book Title </td>
+    <td>Download Link </td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Telugu Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1WwxxU4MTbKq3Ri7u2hDgMgDhXmYgskLC">Download 10th Telugu Text Book 2023 </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Telugu 2nd Lang Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1CBsnB9jjrsZr_Dxg5WDVhKyQ15WlXta">Download 10th Telugu 2nd Lang 2023 </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Hindi Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1hN4M0i8Kp5tjav4fDyjvt3Y06phJwxyr">Download 10th Hindi Text Book 2023 </a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Urdu Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=12-vUR6HX4uiEgdO-pM3a-XR2Jb7jl1hi">Download 10th   Urdu Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class English Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1yvnV8cLxCvYWi5HEWHRzm9iBuW6fBq1g">Download 10th   English Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Maths Eng Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1d65dVaSWLbbZ7cWAYhSYevV0Or76pvhl">Download 10th   Maths EM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Maths Telugu Medium Text Book 2023 </td>
+    <td><a href="https://drive.google.com/file/d/1R1EKel6fJ31MtrOhbT7Dl66Za6HA_Zck/view?usp=sharing">Download 10th   Maths TM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Physics Eng Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1xKZKLUnIRsWuR69TEMrwIhjsNibx3h_e">Download 10th   Physics EM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Physics Telugu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1-wdD5qdJ92peXQZCWakokrRjZBkpY-Nw">Download 10th   Physics TM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Physics Urdu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1SZe9Zmf5KvKMfRCQlnCGqKjcLhNOnizM">Download 10th   Physics UM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Biology Eng Medium Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1QV968tzFtHjb9uUJoUlzZlDo8Mi33hev">Download 10th   Biology EM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Biology Telugu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1aTk0qqWT3PdQyinAF0u7wNJfcIWrvaw6">Download 10th   Biology TM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Biology Urdu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1IpLQcO0CBygOe2036qT6_APnMLQLEvIO">Download 10th   Biology UM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class EVS Eng Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1nCgEw8lnWm0zyAhOqZjKbmeIzfD9n_08">Download 10th EVS EM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class EVS  Telugu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1XOmyaQo57np6I2ApxEL96MSqs9GiXDjo">Download 10th EVS TM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class EVS  Urdu Med Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1uKFzwCY1CAJeciTkLcdWiTmeBDQ70MVX">Download 10th EVS UM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td>APSCERT 10th Class Social Eng Medium   Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1524RlTk6_bbwzitLfsS7mTJXCMnbD8JL">Download 10th Social EM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td height="21">APSCERT 10th Class Social Tel Medium   Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1lDOty_iFKePrEXp9LH5N9PoPtyQWMZKA">Download 10th Social TM Text Book 2023</a></td>
+  </tr>
+  <tr>
+    <td height="21">APSCERT 10th Class Sanskrit CC  Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1koKYOUkB0omZ-wY-2TZqqF7QiRfhxqRK">Download 10th Sanskrit CC Text Book 2023 </a></td>
+  </tr>
+  <tr>
+    <td height="21">APSCERT 10th Class Sanskrit OC  Text Book 2023 </td>
+    <td><a href="https://drive.google.com/open?id=1ixhy25H1I0IuTNLH-e7E7aBYI_5vaFny">Download 10th Sanskrit OC Text Book 2023 </a></td>
+  </tr>
+  <tr>
+    <td height="21">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+   
+   
+   <div><h2 style="text-align: center;"><b>AP 10th Class Text Books from Official CSE Website Link</b></h2>
+  
+  <div align="left">AP 10th Class AP SCERT New Syllabus Text Books 2022 - TET, DSC 10th Class Material AP 10th Class Telugu Medium Text Books PDF Download, 10th Class English Medium Text Books PDF Download.
+  </div>
+  <center>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2590938952955187" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2950129601" style="display: block; text-align: center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<table align="center" width="100%" cellpadding="1" cellspacing="0" border=1>
+
+<tr><th>Book Title</th><th>Description - Subject</th><th>Download Link</th></tr>
+
+<tr>
+  <td>Biology 10th Text Books 2023</td><td>10_Biology_EM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_EM_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Biology 10th Text Books 2023</td><td>10_Biology_Kannada_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_Kannada_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Biology 10th Text Books 2023</td><td>10_Biology_Odiya_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_Odiya_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Biology 10th Text Books 2023</td><td>10_Biology_Tamil_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_Tamil_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Biology 10th Text Books 2023</td><td>10_Biology_TM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_TM_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Biology 10th Text Books 2023</td><td>10_Biology_Urdu_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Biology Books/10_Biology_Urdu_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>English 10th Text Books 2023</td><td>10_English_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/English Books/10_English_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Hindi 10th Text Books 2023</td><td>10_Hindi_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Hindi Books/10_Hindi_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Maths 10th Text Books 2023</td><td>10_Maths_EM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Maths Books/10_Maths_EM_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Maths 10th Text Books 2023</td><td>10_Maths_Kannada_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Maths Books/10_Maths_Kannada_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Maths 10th Text Books 2023</td><td>10_Maths_Odiya_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Maths Books/10_Maths_Odiya_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Maths 10th Text Books 2023</td><td>10_Maths_Tamil_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Maths Books/10_Maths_Tamil_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Maths 10th Text Books 2023</td><td>10_Maths_TM_Textbook+B44:B62</td><td><a href="https://cse.ap.gov.in/downloadBooks/Maths Books/10_Maths_TM_Textbook+B44:B62.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_EM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_EM_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_Kannada_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_Kannada_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_Odiya_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_Odiya_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_Tamil_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_Tamil_Textbook.pdf/10"> Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_TM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_TM_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Physics 10th Text Books 2023</td><td>10_Physics_Urdu_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Physics Books/10_Physics_Urdu_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Sanskrit 10th Text Books 2023</td><td>10_Sanskrit_CC</td><td><a href="https://cse.ap.gov.in/downloadBooks/Sanskrit Books/10_Sanskrit_CC.pdf/10" Click here to download >Click here to download </a></td></tr>
+<tr><td>Sanskrit 10th Text Books 2023</td><td>10_Sanskrit_OC</td><td><a href="https://cse.ap.gov.in/downloadBooks/Sanskrit Books/10_Sanskrit_OC.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Social 10th Text Books 2023</td><td>10_Social_EM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Social Books/10_Social_EM_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Social 10th Text Books 2023</td><td>10_Social_Kannada_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Social Books/10_Social_Kannada_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Social 10th Text Books 2023</td><td>10_Social_Odiya_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Social Books/10_Social_Odiya_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Social 10th Text Books 2023</td><td>10_Social_Tamil_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Social Books/10_Social_Tamil_Textbook.pdf/10" >Click here to download </a></td></tr>
+<tr><td>Social 10th Text Books 2023</td><td>10_Social_TM_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Social Books/10_Social_TM_Textbook.pdf/10">Click here to download </a></td></tr>
+<tr><td>Telugu 10th Text Books 2023</td><td>10_Telugu_FL</td><td><a href="https://cse.ap.gov.in/downloadBooks/Telugu Books/10_Telugu_FL.pdf/10">Click here to download </a></td></tr>
+<tr><td>Telugu 10th Text Books 2023</td><td>10_Telugu_SL</td><td><a href="https://cse.ap.gov.in/downloadBooks/Telugu Books/10_Telugu_SL.pdf/10">Click here to download </a></td></tr>
+<tr><td>Urdu 10th Text Books 2023</td><td>10_URDU_Language_Textbook</td><td><a href="https://cse.ap.gov.in/downloadBooks/Urdu Books/10_URDU_Language_Textbook.pdf/10">Click here to download </a></td></tr>
+</table>
+
+
+
+
+
+  
+  <div><h2 style="text-align: center;"><b>AP 10th Class Text Books AP SCERT 10th Class Syllabus Text Books 2022</b></h2>
+  
+  <div align="left">AP 10th Class AP SCERT New Syllabus Text Books 2022 - TET, DSC 10th Class Material AP 10th Class Telugu Medium Text Books PDF Download, 10th Class English Medium Text Books PDF Download.
+  </div>
+  <center>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2590938952955187" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2950129601" style="display: block; text-align: center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+  <div><ul style="text-align: left;">
+  <li><a href="https://drive.google.com/file/d/1EFjHfD91N0jr8YilRhKkoUwroOIDqW--/view?usp=sharing">AP SCERT 10th Class Telugu Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/1KNkO-sDVXhfPPy607gx4DP953o0sKn48/view?usp=sharing">AP SCERT 10th Class English Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/174GgLLBt23R6Rrmq23hjZJ8-8vPKeT2o/view?usp=sharing">AP SCERT 10th Class Hindi Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/1DiL1vKYRS7AsYVtGFI7P9XqVlNvaG0nG/view?usp=sharing">AP SCERT 10th Class Maths Telugu Medium Text Book Download</a></li>
+  <li><a href="https://drive.google.com/file/d/1gAc0w2GkgZs1YweXdiSAnLpwH1bNI0Bg/view?usp=sharing">AP SCERT 10th Class Maths English Medium Text Book Download</a></li>
+  
+    </ul><center>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-2590938952955187" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2950129601" style="display: block; text-align: center;"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+    
+    <ul>
+      
+      <li><a href="https://drive.google.com/file/d/1ict7r52al3nG_rD126dRbWexjoVjXsQd/view?usp=sharing">AP SCERT 10th Class Physics English Medium Text Book Download</a></li>
+      <li><a href="https://drive.google.com/file/d/1HsVqCDqXzCjojNSxdZ1I75ihS1doSjaz/view?usp=sharing">AP SCERT 10th Class Physics Telugu Medium Text Book Download</a></li>
+      
+      
+    <li><a href="https://drive.google.com/file/d/1FawtD_jTJXtRvo209B25GgIBYq3hm9-k/view?usp=sharing">AP SCERT 10th Class Biology Telugu Medium Text Book Download</a></li>
+    <li><a href="https://drive.google.com/file/d/1SWMFcaGDv6Qi4c1DaSX4TRLki8nq45pI/view?usp=sharing">AP SCERT 10th Class Biology English Medium Text Book Download</a></li> 
+    <li><a href="https://drive.google.com/file/d/1md8a9cYVrbbKU6PXfeg2zQxvGcDPa9YX/view?usp=sharing">AP SCERT 10th Class Social English Medium Text Book Download</a></li> 
+    <li><a href="https://drive.google.com/file/d/19RpRQ7ux-O1i-H98U5P15J0r4bkCYpuO/view?usp=sharing">AP SCERT 10th Class Social Telugu Medium Text Book Download</a></li> 
+    
+    <li><a href=""><span style="font-size: medium;">AP SCERT 10th Class Old Text Books All Subjects Click Here</span></a></li>
+  
+ 
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+</br></br>
+
+
+
+<div class = "grammers">
+<div id = "class-tables" class = "mt-4">
+ <div id="grammers" class="class-table" style="display: auto;">
+        <h3 align = "center">Grammer</h3>
+        <table id="grammer-table" class="table table-bordered">
+     
+
+<tr>
+<th>S.no</th>
+<th>Grammer subject</th>
+<th>Links</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Telugu full Grammer PDF</td>
+<td><a href = "https://teluguliterature.wordpress.com/wp-content/uploads/2009/10/20614098-telugu-vyakaranam.pdf" target = "_blank" >View pdf</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>English full Grammer PDF</td>
+<td><a href = "https://www.bbau.ac.in/Docs/FoundationCourse/TM/AECC105/Grammar.pdf" target = "_blank" >View pdf</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hindi full Grammer PDF</td>
+<td><a href = "https://rajeduboard.rajasthan.gov.in/books-2019/cls9/Hindi%20Vyakaran%20&%20Rachna.pdf" target = "_blank" >View pdf</a></td>
+</tr>
+</table>
+</div>
+</div></div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</br></br>
+
+<h1 align = "center"><a href = "https://src.udiseplus.gov.in/locateSchool/schoolSearch" target = "_blank">Search schools all over A.P</a></h1></br></br>
+<div class="remaining">
+    <h1 align="center" style="color: gold;">Chakra's Syllabus Suggestions to Implement New Syllabus</h1>
+</div>
+</br>
+<script>
+$(document).ready(function() {
+    // Initially show the remaining container
+    $(".remaining").show();
+
+    // Event listener for class select dropdown
+    $('#class-select').on('change', function() {
+        var selectedClass = $(this).val();
+        $('.class-table').hide();
+        $('#' + selectedClass).show();
+    });
+});
+</script>
+
+<div class="classes">
+    <br><br>
+    <div class="c_head">
+        <h2 style="text-align: center; font-family: Arial, sans-serif;">1 to 5<sup>th</sup> class (Primary Sections)</h2>
+    </div>
+    <div class="c_body">
+        <ul style="list-style-type: square; font-family: Arial, sans-serif;">
+            <li>
+                <h5 style="font-family: Arial, sans-serif;">
+                    It's better to include the basic grammar for languages and add moral stories in languages.
+                </h5>
+            </li>
+            <li>
+                <h5 style="font-family: Arial, sans-serif;">
+                    It's better to include the basic grammar for languages and add moral stories.
+                    <ul>
+                        <li>From the second point onwards, fill in the points I mentioned by replacing them.</li>
+                        <li>Newer subjects like biology, chemistry, and physics should be added. This broadens the knowledge base of students and prepares them for future scientific learning and careers.</li>
+                        <li>Physical activities and martial arts should be implemented. This promotes physical fitness, discipline, and self-confidence among students.</li>
+                        <li>Basic cultural education and some cultural activities should be developed. This helps students understand and appreciate their cultural heritage, promoting inclusivity and respect.</li>
+                        <li>Because in olden days, every person used to learn some of the 64 arts and could benefit from any of them. However, nowadays, people tend to choose a single path for graduation, which may not necessarily lead to job opportunities. Therefore, it's better to implement more activities other than education for some time each day to improve his/her talent.</li>
+                        <li>Include creative arts like painting, music, and drama. 
+                            <ul>
+                                <li>Advantages: Foster creativity, self-expression, and emotional intelligence. Enhance cognitive development and provide a means of stress relief and relaxation.</li>
+                            </ul>
+                        </li>
+                        <li>Teach life skills such as critical thinking, problem-solving, and financial literacy. 
+                            <ul>
+                                <li>Advantages: Equip students with essential skills for personal and professional success. Improve decision-making abilities and prepare students to navigate real-life challenges.</li>
+                            </ul>
+                        </li>
+                        <li>Introduce environmental education and sustainable practices. 
+                            <ul>
+                                <li>Advantages: Create awareness about environmental issues. Promote sustainable living and conservation practices, preparing students to be responsible global citizens.</li>
+                            </ul>
+                        </li>
+                        <li>Offer vocational training and entrepreneurship programs. 
+                            <ul>
+                                <li>Advantages: Provide practical skills and prepare students for the workforce. Encourage innovation and creativity, promoting self-employment and job creation.</li>
+                            </ul>
+                        </li>
+                        <li>Integrate technology education and digital literacy. 
+                            <ul>
+                                <li>Advantages: Prepare students for the digital age. Improve technological competence and adaptability in a technology-driven world.</li>
+                            </ul>
+                        </li>
+                        <li>Include sports and team-building activities. 
+                            <ul>
+                                <li>Advantages: Promote physical health, teamwork, and leadership skills. Instill values like sportsmanship and fair play.</li>
+                            </ul>
+                        </li>
+                        <li>Teach mindfulness and well-being practices. 
+                            <ul>
+                                <li>Advantages: Improve mental health and emotional well-being. Teach stress management and resilience-building techniques.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </h5>
+            </li>
+            <li>
+                <h5 style="font-family: Arial, sans-serif;">
+                    It's better to include the basic grammar for languages and add moral stories.
+                </h5>
+            </li>
+            <li>
+                <h5 style="font-family: Arial, sans-serif;">
+                    It's better to include the basic grammar for languages and add moral stories.
+                </h5>
+            </li>
+        </ul>
+<div class = "sign" style = " justify-content:right; dislay:flex; width:100%;">
+   <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra solutions"  id="profile" align="right" style="height:20%;width:20%;border-radius:360px;">
+</br></br><p align = "right"><b><big  style = "color:black;">Chakra Educations</big></b><p>
+ </div>          
+    </div>
+</div></br>
+<div class = "classes" style = "color:black;">
+<ul type = "disk">
+<li>High school syllubus should contain our cultural epic stories and greater moral,historical lessons.</li>
+<li>As included ramayana in present syllubus also include bhagavath geeta shorter version from 6 th to 7 th.</li>
+<li>Later some other cultural books also.</li>
+</br>
+<a href = "./ethics.html"  style = "color:black;">Get cultural books here</a>
+</ul>
+</div>
+<div class="gg" style="width:100%; background-color:#000080;height:auto;">
+    <footer class="chakra-footer text-light" style="background-color:#000080; color:gold; width:100%;">
+        <h1 align="center">Chakra Educations</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-left">
+                    <ul class="list-unstyled footer-nav" type="disk">
+                        <li class="g_li"><a href="#">Home</a></li>
+                        <li class="g_li"><a href="./kids.html" target="_blank">Kids</a></li>
+                        <li class="g_li"><a href="./games.html" target="_blank">Games</a></li>
+                        <li class="g_li"><a href="./school.html" target="_blank">School</a></li>
+                        <li class="g_li"><a href="./notifications.html" target="_blank">Notifications</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                            <ul class="dropdown-menu">
+                                <li class="g_li"><a href="./ethics.html">Ethics</a></li>
+                                <li class="g_li"><a href="./gk.html">G.K.</a></li>
+                                <li class="g_li"><a href="./wa.html">What's App</a></li>
+                            </ul>
+                        </li>
+                        <li class="g_li"><a href="./calc.html" target="_blank">Calc</a></li>
+                        <li class="g_li"><a href="./contact.html" target="_blank">Contact</a></li>
+                        <li class="g_li"><a href="./aboutus.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img src="https://i.ibb.co/xzVZnqj/cce01bc7-b377-4585-8373-da693a8f8fdf.jpg" alt="Chakra Solutions" id="profile_2" class="img-fluid">
+                </div>
+                <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."</p>
+                        <footer class="small text-muted">Malcolm X</footer>
+                    </blockquote>
+                    <ul class="list-unstyled social-media mt-3">
+                        <li><a href="www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VahCDrzLNSZx6qzTPv2d" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://youtube.com/channel/UCU8yGtWCBTXVwnbiylb3jCQ?si=UFUN4DCocKGg2tLf" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p align="center">Copyright © 2024 All Rights Reserved by Chakra Educations</p>
+    </footer>
+</div>
+
+</body>
+</html>
